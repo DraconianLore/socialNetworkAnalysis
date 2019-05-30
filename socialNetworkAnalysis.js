@@ -5,8 +5,20 @@ var data = {
     follows: ["f02", "f03", "f04"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f01';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -26,8 +38,20 @@ var data = {
     follows: ["f05", "f06"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f02';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -47,8 +71,20 @@ var data = {
     follows: ["f01", "f04", "f06"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f03';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -68,8 +104,20 @@ var data = {
     follows: ["f01", "f02", "f03", "f05", "f06"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f04';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -89,8 +137,20 @@ var data = {
     follows: ["f04"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f05';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -110,8 +170,20 @@ var data = {
     follows: ["f05"],
     getFollowers: function(ageMax, ageMin) {
       let person = 'f06';
-      if (ageMin || ageMax) {
-        console.log('oops');
+      let tempFollowers = 0;
+      if (ageMin) {
+        for (let people in data) {
+          if (people != person) {
+            if (data[people].follows.includes(person)) {
+              if (data[people].age > ageMin) {
+                tempFollowers++;
+              }
+            }
+          }
+        }
+        return tempFollowers;
+      } else if (ageMax) {
+        console.log('not implimented yet');
       } else {
         this.followers = 0;
         for (let people in data) {
@@ -152,3 +224,21 @@ function getEveryonesFollowers() {
   // console.log(data);
 
 }
+
+function followersOver30() {
+  let mostOver30 = data.f01;
+  let currentPerson;
+  for (let people in data) {
+    currentPerson = data[people];
+    currentPerson.getFollowers(30,99);
+    if (currentPerson.followers > mostOver30.followers) {
+      mostOver30 = currentPerson;
+    }
+  }
+  console.log(mostOver30.name + ' has the most followers over 30 years of age');
+}
+
+followersOver30();
+
+
+console.log(data);
